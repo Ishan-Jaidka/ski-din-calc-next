@@ -51,30 +51,24 @@ class Form extends Component {
     })
   }
 
-  handleSubmit = (event) => {
+  handleSubmit = async (event) => {
     const apiRoot = '/api/DIN/calculate'
     let url = `${apiRoot}?units=${this.state.units}&type=${this.state.type}&height=${this.state.height}&weight=${this.state.weight}&age=${this.state.age}&bsl=${this.state.bsl}`
     console.log('Getting data from: ' + url)
     event.preventDefault()
-    axios
-      .get(url)
-      .then((res) => {
-        console.log(JSON.stringify(res))
-        if (res.status === 200) {
-          this.setState({
-            din: 'Din: ' + res.data.din,
-          })
-        } else
-          this.setState({
-            din: res.data.error,
-          })
+    const response = await fetch(url)
+    const data = await response.json()
+    console.log('response:')
+    console.log(data)
+    if (data.status === 200) {
+      this.setState({
+        din: 'Din: ' + data.din,
       })
-      .catch((error) => {
-        console.log(JSON.stringify(error.response.data))
-        this.setState({
-          din: JSON.stringify(error.response.data.message),
-        })
+    } else {
+      this.setState({
+        din: data.message,
       })
+    }
   }
 
   render() {

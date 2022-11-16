@@ -18,26 +18,26 @@ export default function handler(req: NextApiRequest, res: NextApiResponse<any>) 
 
     let response = calculateDin(skier)
 
-    res.setHeader('Access-Control-Allow-Origin', '*')
-    res.status(response.status).json(response)
+    console.log(response)
+    res.status(response.status).send(response)
   } catch (e) {
     console.log('Error: ')
     console.log(e)
-    res.setHeader('Access-Control-Allow-Origin', '*')
+    // res.setHeader('Access-Control-Allow-Origin', '*')
     res.status(500).send({ error: 'something went wrong' })
   }
 
-  res.status(200).json(req.query)
+  res.status(200).send(req.query)
 }
 
-function returnResponse(statusCode: number, message: any) {
-  let response = {
-    statusCode: statusCode,
-    headers: {
-      'Access-Control-Allow-Origin': '*',
-    },
-    body: message,
-  }
-  console.log(`Response: ${JSON.stringify(response)}`)
-  return response
-}
+// function returnResponse(statusCode: number, message: any) {
+//   let response = {
+//     statusCode: statusCode,
+//     headers: {
+//       'Access-Control-Allow-Origin': '*',
+//     },
+//     body: message,
+//   }
+//   console.log(`Response: ${JSON.stringify(response)}`)
+//   return response
+// }
