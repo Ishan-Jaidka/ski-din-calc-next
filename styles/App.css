@@ -36,7 +36,7 @@
 .Form {
   display: flex;
   flex-direction: column;
-  max-width: 90vw;
+  width: 80vmin;
   font-size: calc(5px + 2vmin);
   color: white;
 }
