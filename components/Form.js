@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import axios from 'axios'
+import path from 'path'
 
 class Form extends Component {
   constructor(props) {
@@ -52,7 +52,7 @@ class Form extends Component {
   }
 
   handleSubmit = async (event) => {
-    const apiRoot = '/api/DIN/calculate'
+    const apiRoot = path.join(process.cwd(), 'api/DIN/calculate')
     let url = `${apiRoot}?units=${this.state.units}&type=${this.state.type}&height=${this.state.height}&weight=${this.state.weight}&age=${this.state.age}&bsl=${this.state.bsl}`
     console.log('Getting data from: ' + url)
     event.preventDefault()
