@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
-import '../handlers/calculate-din-handler'
-import { calculateDin } from '../handlers/calculate-din-handler'
+import '../../../lib/api/DIN/calculate-din-handler'
+import { calculateDin } from '../../../lib/api/DIN/calculate-din-handler'
 
 export default function handler(req: NextApiRequest, res: NextApiResponse<any>) {
   try {

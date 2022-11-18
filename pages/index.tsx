@@ -1,8 +1,8 @@
 import React from 'react'
-import DownloadApp from '../components/Images/DownloadApp'
-import Form from '../components/Form'
-import Logo from '../components/Images/Logo'
-import Disclaimer from '../components//Disclaimer'
+import DownloadApp from '../lib/components/Images/DownloadApp'
+import Form from '../lib/components/Form'
+import Logo from '../lib/components/Images/Logo'
+import Disclaimer from '../lib/components//Disclaimer'
 import { useState, useEffect } from 'react'
 
 //TODO:
