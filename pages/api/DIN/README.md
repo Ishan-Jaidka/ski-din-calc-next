@@ -5,7 +5,7 @@ Use the Ski Din calculator API to determine what DIN setting (release tension) t
 ### URL:
 
 ```
-TBD
+https://ski-din-calculator.vercel.app/
 ```
 
 ## GET Request
@@ -26,10 +26,10 @@ bsl: [boot sole length in mm]
 ### Sample Request:
 
 ```
-TBD/api/DIN/calculate?units=standard&type=2&height=72&weight=160&age=69&bsl=315
+https://ski-din-calculator.vercel.app/api/DIN/calculate?units=standard&type=2&height=72&weight=160&age=69&bsl=315
 ```
 
-### Response.data Object:
+### Response:
 
 ```
 {
@@ -57,10 +57,4 @@ Height: 24-120 inches
 Weight: 22-2000 lbs
 Age: 1-200
 Boot Sole Length (BSL): 165-405 mm
-```
-
-If invalid query parameters are used, access the error message using the following.
-
-```
-error.response.data
 ```
