@@ -5,7 +5,7 @@ import { calculateDin } from '../../../lib/api/DIN/calculate-din-handler'
 export default function handler(req: NextApiRequest, res: NextApiResponse<any>) {
   try {
     if (Object.keys(req.query).length === 0) {
-      res.status(400).json({ error: 'no query params' })
+      res.setHeader('Access-Control-Allow-Origin', '*').status(400).json({ error: 'no query params' })
       return
     }
     let skier = {
@@ -22,11 +22,10 @@ export default function handler(req: NextApiRequest, res: NextApiResponse<any>) 
     let response = calculateDin(skier)
 
     console.log(response)
-    res.status(response.status).send(response)
+    res.setHeader('Access-Control-Allow-Origin', '*').status(response.status).send(response)
   } catch (e) {
     console.log('Error: ')
     console.log(e)
-    // res.setHeader('Access-Control-Allow-Origin', '*')
-    res.status(500).send({ error: 'something went wrong' })
+    res.setHeader('Access-Control-Allow-Origin', '*').status(500).send({ error: 'something went wrong' })
   }
 }
