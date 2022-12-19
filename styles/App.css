@@ -8,7 +8,8 @@
 
 .App-logo {
   margin-top: 2vh;
-  height: 40vmin;
+  width: auto;
+  height: 60vmin;
   max-width: 90vw;
   pointer-events: none;
 }
@@ -25,8 +26,16 @@
 .App-download {
   display: flex;
   margin-top: 3vh;
+  margin-bottom: 3vh;
+  height: 10vmin;
+  width: auto;
   flex-direction: column;
   align-items: center;
+}
+
+.App-download-image {
+  height: 10vmin;
+  width: auto;
 }
 
 .App-link {

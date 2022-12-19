@@ -5,13 +5,6 @@ import Logo from '../lib/components/Images/Logo'
 import Disclaimer from '../lib/components//Disclaimer'
 import { useState, useEffect } from 'react'
 
-//TODO:
-/*
-  replace class components with functional components in like form.js
-  FLEXBOX FROGGY
-  redesign using flexbox
-  - hint: flexboxes can be nested and are very easy to debug with dev tools
-*/
 function App() {
   //Displays Disclaimer after 3 second delay
   const [buttonDisclaimer, setButtonDisclaimer] = useState(false)
