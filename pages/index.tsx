@@ -20,6 +20,7 @@ function App() {
       <Head>
         <link rel="icon" href="https://ski-din-calculator.vercel.app/images/chair2.png" />
         <meta property="og:title" content="Ski DIN Calculator" />
+        <title>Ski DIN Calculator</title>
         <meta
           name="description"
           property="og:description"
